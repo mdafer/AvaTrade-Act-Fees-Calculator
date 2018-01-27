@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "name": "AvaTrade Add-on",
+  "description": "Calculates AvaTrade Act closed order's fees and shorten's names of materials",
+  "version": "0.1",
+  "icons": {
+    "16":"img/16px.png",
+    "48":"img/48px.png",
+    "128":"img/128px.png"
+  },
+  "browser_action": {
+    "default_icon": "/img/19px.png",
+    "default_title": "AvaTrade Add-on"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "https://actlite1.sysfx.com:12035/*",
+    "storage",
+    "tabs"
+  ] ,
+  "content_scripts": [ {
+    "js": [ "/js/lib/jquery-1.12.4.min.js", "/js/content_script.js" ],
+    "matches": [
+      "https://*/actlite*"
+    ],
+    "run_at": "document_end"
+  } ]
+}
